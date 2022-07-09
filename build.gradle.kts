@@ -6,13 +6,14 @@ plugins {
 }
 
 group = "kr.kro.minestar"
-version = "1.2.6"
+version = "1.0.0"
 
 val plugins = File("C:\\Users\\MineStar\\Desktop\\MC Server folder\\libs")
 
 
 repositories {
     mavenCentral()
+    maven("https://papermc.io/repo/repository/maven-public/")
     maven(url = "https://oss.sonatype.org/content/repositories/snapshots/") {
         name = "sonatype-oss-snapshots"
     }
@@ -21,6 +22,11 @@ repositories {
 
 dependencies {
     compileOnly(kotlin("stdlib"))
+
+    compileOnly("io.papermc.paper:paper-api:1.19-R0.1-SNAPSHOT")
+
+    compileOnly("com.github.MineStarAS:Utility-API:1.2.8")
+    compileOnly(files("C:\\Users\\MineStar\\Desktop\\MC Server folder\\libs\\craftbukkit-1.19-R0.1-SNAPSHOT.jar"))
 }
 
 java {
